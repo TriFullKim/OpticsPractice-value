@@ -39,12 +39,11 @@ plt.title("EXPERIENCE 02");plt.xlabel('theta[degree]');plt.ylabel('sr[cd/m^2]')
 plt.xlim(0,90);plt.ylim(0,150)
 plt.xticks([i*10 for i in range(10)]);plt.yticks([i*10 for i in range(16)])
 
-plt.plot([0,30,60,85], val.result.iloc[0,:], label='mean(1.0[sr])', linestyle='dashed',linewidth=0.6,marker='o',markersize=2)
-plt.plot([0,30,60,85], val.result.iloc[3,:], label='theorical_mean(1.0[sr])',linestyle='solid',linewidth=0.6,marker='x',markersize=4)
-# plt.plot([0,30,60,85], val.result.iloc[1,:], label='mean(0.2[sr])',linestyle='dashed',linewidth=0.6,marker='o',markersize=2)
-# plt.plot([0,30,60,85], val.result.iloc[4,:], label='theorical_mean(0.2[sr])',linestyle='solid',linewidth=0.6,marker='x',markersize=4)
-# plt.plot([0,30,60,85], val.result.iloc[2,:], label='mean(0.1[sr])',linestyle='dashed',linewidth=0.6,marker='o',markersize=2)
-# plt.plot([0,30,60,85], val.result.iloc[5,:], label='theorical_mean(0.1[sr])',linestyle='solid',linewidth=0.6,marker='x',markersize=4)
+# plt.plot([0,30,60,85], val.result.iloc[0,:], label='mean(1.0[sr])', linestyle='',linewidth=0.6,marker='o',markersize=2)
+# plt.plot([0,30,60,85], val.result.iloc[3,:], label='theorical_mean(1.0[sr])',linestyle='',linewidth=0.6,marker='x',markersize=4)
+# plt.plot([0,30,60,85], val.result.iloc[1,:], label='mean(0.2[sr])',linestyle='',linewidth=0.6,marker='o',markersize=2)
+# plt.plot([0,30,60,85], val.result.iloc[4,:], label='theorical_mean(0.2[sr])',linestyle='',linewidth=0.6,marker='x',markersize=4)
+plt.plot([0,30,60,85], val.result.iloc[2,:], label='mean(0.1[sr])',linestyle='',linewidth=0.6,marker='o',markersize=2)
+plt.plot([0,30,60,85], val.result.iloc[5,:], label='theorical_mean(0.1[sr])',linestyle='',linewidth=0.6,marker='x',markersize=4)
 
-plt.show()
-'''
+plt.show()'''

@@ -33,12 +33,14 @@ trimDataEXP0401.loc[:, 'D_3cm'] = [10+i*3 for i in range(11)]
 trimDataEXP0401.loc[:, 'LUX_3cm'] = exp04_01.loc[:, 'delta_3cm[lux]']
 trimDataEXP0401.loc[:, 'D_3cm*LUX_3cm^2'] =exp04_01.loc[:, 'delta_3cm[lux]'] * trimDataEXP0401.loc[:, 'D_3cm']**2
 trimDataEXP0401.loc[:, 'D_4cm'] = [10+i*4 for i in range(11)]
-trimDataEXP0401.loc[:, 'LUX_4cm'] = exp04_01.loc[:, 'delta_4cm[lux]'] * trimDataEXP0401.loc[:, 'D_4cm']**2
+trimDataEXP0401.loc[:, 'LUX_4cm'] = exp04_01.loc[:, 'delta_4cm[lux]']
 trimDataEXP0401.loc[:, 'D_4cm*LUX_4cm^2'] =exp04_01.loc[:, 'delta_4cm[lux]'] * trimDataEXP0401.loc[:, 'D_4cm']**2
 trimDataEXP0401.loc['MEAN',:]=trimDataEXP0401.mean(axis=0)
 trimDataEXP0401.loc['STD',:]=trimDataEXP0401.std(axis=0)
 # exp04_01.loc[:, '3cmResult'].describe()
 # exp04_01.loc[:, '4cmResult'].describe()
+trimDataEXP0401.shape
+trimDataEXP0401.iloc[:,[2,5]].to_clipboard()
 
 print(exp04_01.columns)
 print(exp04_01)
@@ -81,3 +83,5 @@ result.loc['0.1 error',:]=error.iloc[2,:]
 result.iloc[[0,3],:].to_clipboard()
 result.iloc[[1,4],:].to_clipboard()
 result.iloc[[2,5],:].to_clipboard()
+
+result.iloc[6:9,:].to_clipboard()
