@@ -1,6 +1,6 @@
 import EXP05_221102 as val
 import matplotlib.pyplot as plt
-
+########################
 val.color0502
 angle0502 = list(val.result_exp0502.loc['MEAN',:])
 n_prism = list(val.result_exp0502.loc['n_prism',:])
@@ -16,6 +16,7 @@ for color,angle,prism in zip(val.color0502,angle0502,n_prism):
 plt.annotate(val.color0502[3],(angle0502[3],n_prism[3]),xytext=(angle0502[3]-.18,n_prism[3]-.0002))
 plt.show()
 
+########################
 val.color0503
 angle0503 = list(val.result_exp0503.loc['MEAN',:])
 lambdaValue = list(val.result_exp0503.loc['lambda[mm]',:])
