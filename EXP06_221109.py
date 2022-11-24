@@ -20,16 +20,17 @@ luxReferPoint = 3
 trim_exp0601 = pd.DataFrame()
 trim_exp0601 = rd_exp0601 - luxReferPoint
 
-trim_exp0601.loc[:, 'luxMEAN'] = trim_exp0601.mean(axis=1)
+trim_exp0601.loc[:, 'IntensityMean'] = trim_exp0601.mean(axis=1)
 for degree in polarAngle:
-    trim_exp0601.loc[degree, 'theoricalValue'] = trim_exp0601.loc[0, 'luxMEAN'] * cos(radians(degree)) ** 2
+    trim_exp0601.loc[degree, 'theoricalValue'] = trim_exp0601.loc[0, 'IntensityMean'] * cos(radians(degree)) ** 2
 # EXP0601_result ############
-result_exp0601 = trim_exp0601.loc[:, 'luxMEAN':'ERROR']
+result_exp0601 = trim_exp0601.loc[:, 'IntensityMean':'theoricalValue']
 # Analysis ##################
-trim_exp0601.loc[:, 'ERROR'] = abs(trim_exp0601.loc[:, 'theoricalValue'] - trim_exp0601.loc[:, 'luxMEAN'])
+# trim_exp0601.loc[:, 'ERROR'] = abs(trim_exp0601.loc[:, 'theoricalValue'] - trim_exp0601.loc[:, 'IntensityMean'])
 
 # END #######################
-
+# rd_exp0601.to_clipboard()
+result_exp0601.to_clipboard()
 
 
 angle0602_1 = ['0deg', '45deg']
@@ -43,7 +44,8 @@ result_exp0602_1 = trim_exp0602_1.loc[:,f'{angle0602_1[0]}MEAN':f'{angle0602_1[l
 # Analysis ##################
 
 # END #########################
-
+# rd_exp0602_1.to_clipboard()
+result_exp0602_1.to_clipboard()
 
 
 angle0602_2 = ['25deg', '55deg', '70deg', '85deg', '115deg']
@@ -57,6 +59,8 @@ result_exp0602_2 = trim_exp0602_2.loc[:,f'{angle0602_2[0]}MEAN':f'{angle0602_2[l
 # Analysis ##################
 
 # END #########################
+# rd_exp0602_2.to_clipboard()
+result_exp0602_2.to_clipboard()
 
 
 
@@ -72,3 +76,4 @@ trim_exp0603.loc['MIN','2차'] = trim_exp0603.loc[:,'2차'].idxmin()
 brewsterAngle = trim_exp0603.loc['MIN',:].mean()
 n_glass = sin(radians(brewsterAngle))/cos(radians(brewsterAngle)) # tan(brewsterAngle)
 # END #######################
+rd_exp0603.to_clipboard()
